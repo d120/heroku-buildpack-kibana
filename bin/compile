@@ -9,9 +9,10 @@ CACHE_DIR=$2
 ENV_DIR=$3
 
 INIT_SCRIPT="$BUILD_DIR/.profile.d/kibana.sh"
-
+echo $(ls -l $ENV_DIR)
 if [ -f "$ENV_DIR/ELASTICSEARCH_URL" ]; then
   ELASTICSEARCH_URL=$(cat $ENV_DIR/ELASTICSEARCH_URL)
+  echo custom elasticsearch
 else
   ELASTICSEARCH_URL="http://localhost:9200"
 fi
